@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Preferences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Swipe View -->
+        <div id="swipeView" class="view">
+            <div class="header">
+                <h1>Paws & Preferences</h1>
+                <p>Swipe to find your favourite kitties</p>
+                <div class="progress" id="progress">1 / 15</div>
+            </div>
+            
+            <div class="card-container">
+                <div class="card next-card" id="nextCard">
+                    <img id="nextCardImg" src="" alt="Next cat">
+                </div>
+                
+                <div class="card current-card" id="currentCard">
+                    <img id="currentCardImg" src="" alt="Current cat">
+                </div>
+            </div>
+
+            <!-- Reaction Animation -->
+            <div class="reaction-overlay" id="reactionOverlay">
+                <div class="reaction-icon" id="reactionIcon"></div>
+            </div>
+            
+            <div class="controls">
+                <button class="control-btn" id="dislikeBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <button class="control-btn" id="likeBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="hint">Swipe or tap to choose</div>
+        </div>
+
+        <!-- Results View -->
+        <div id="resultsView" class="view hidden">
+            <div class="results">
+                <h2>Your Matches</h2>
+                <div class="results-count" id="resultsCount">You liked 0 out of 15 cats</div>
+                
+                <div id="resultsContent">
+                    <div class="results-grid" id="resultsGrid"></div>
+                </div>
+                
+                <button class="restart-btn" id="restartBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="1 4 1 10 7 10"></polyline>
+                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                    </svg>
+                    Start Over
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading View -->
+        <div id="loadingView" class="view hidden">
+            <div class="loading">Loading cats...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
